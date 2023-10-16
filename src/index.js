@@ -50,7 +50,7 @@ const getUsers = (request, response) => {
 
     pool.query('SELECT * FROM Users', (error, results) => {
         if (error) {
-            return response.status(400).json({ status: 'failed', message: error.code });
+            return response.status(500).json({error:"Something went wrong. Please try again later."});
         }
 
         const rows = results.rows.map(user => {
@@ -109,7 +109,7 @@ const createUser = (request, response) => {
 
             pool.query('INSERT INTO Users (name, address, email, password, photos, creditcard_type, creditcard_number, creditcard_name, creditcard_expired, creditcard_cvv) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)', [name, address, email, encryptedPassword, photos, creditcard_type, creditcard_number, creditcard_name, creditcard_expired, creditcard_cvv], error => {
                 if (error) {
-                    return response.status(400).json({ status: 'failed', message: error.code });
+                    return response.status(500).json({error:"Something went wrong. Please try again later."});
                 }
 
                 getUser(email).then(user => {
@@ -134,7 +134,7 @@ const getUserById = (request, response) => {
 
     pool.query('SELECT * FROM Users WHERE id = $1', [userId], (error, results) => {
         if (error) {
-            return response.status(400).json({ status: 'failed', message: error.code });
+            return response.status(500).json({error:"Something went wrong. Please try again later."});
         }
 
         const users = {
@@ -164,7 +164,7 @@ const updateUser = (request, response) => {
 
     pool.query('UPDATE Users SET name = $1, address = $2, email = $3, creditcard_type =$4, creditcard_number =$5, creditcard_name = $6, creditcard_expired = $7, creditcard_cvv = $8, photos = $9 where id = $10', [name, address, email, creditcard_type, creditcard_number, creditcard_name, creditcard_expired, creditcard_cvv, photos, user_id], error => {
         if (error) {
-            return response.status(400).json({ status: 'failed', message: error.code });
+            return response.status(500).json({error:"Something went wrong. Please try again later."});
         }
 
         getUser(email).then(user => {
