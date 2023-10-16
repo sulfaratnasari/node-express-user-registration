@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "156f299c-c1c9-4b94-8f70-c548aabc3fc2",
+		"name": "user-registration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9521999"
+	},
+	"item": [
+		{
+			"name": "user-register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "HiJhvL$T27@1u^%u86g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Mimi\",\r\n    \"address\": \"Jambi\",\r\n    \"password\": \"test123\",\r\n    \"photos\": [\"https://www.istockphoto.com/id/foto/pengusaha-headphone-dan-laptop-webinar-di-kantor-dengan-kopi-di-atas-meja-panggilan-gm1434947710-476425062\"],\r\n    \"email\": \"mimi@gmail.com\",\r\n    \"creditcard_type\": \"Store Card\",\r\n    \"creditcard_number\": \"56655656\",\r\n    \"creditcard_name\" : \"Hello Bank\",\r\n    \"creditcard_expired\": \"06/06/23\",\r\n    \"creditcard_cvv\": \"5677\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "HiJhvL$T27@1u^%u86g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/user/list",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "HiJhvL$T27@1u^%u86g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/user/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "HiJhvL$T27@1u^%u86g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 2,\r\n    \"name\" : \"Mimi\",\r\n    \"address\": \"East Jambi\",\r\n    \"password\": \"test123\",\r\n    \"photos\": [\"https://www.istockphoto.com/id/foto/pengusaha-headphone-dan-laptop-webinar-di-kantor-dengan-kopi-di-atas-meja-panggilan-gm1434947710-476425062\"],\r\n    \"email\": \"mimi@gmail.com\",\r\n    \"creditcard_type\": \"Store Card\",\r\n    \"creditcard_number\": \"56655656\",\r\n    \"creditcard_name\" : \"Hello Bank\",\r\n    \"creditcard_expired\": \"06/06/23\",\r\n    \"creditcard_cvv\": \"5677\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/update",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
